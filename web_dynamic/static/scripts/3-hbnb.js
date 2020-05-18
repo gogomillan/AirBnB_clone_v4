@@ -72,7 +72,7 @@ function setPlaces(places) {
 
     // Title box
     const titleBox = document.createElement('div');
-    titleBox.classList.add('title-box');
+    titleBox.classList.add('title_box');
     const placeName = document.createElement('h2');
     placeName.append(place.name);
     const priceByNight = document.createElement('div');
@@ -92,7 +92,11 @@ function setPlaces(places) {
     numberBathRooms.classList.add('number_bathrooms');
     numberBathRooms.append(place.number_bathrooms);
 
-    
+    // Description
+    const description = document.createElement('div');
+    description.classList.add('description');
+    description.innerHTML = place.description;
+
     // Append to TilteBox
     titleBox.append(placeName);
     titleBox.appendChild(priceByNight);
@@ -102,10 +106,10 @@ function setPlaces(places) {
     information.appendChild(numberRooms);
     information.appendChild(numberBathRooms);
 
-
-
-
+    // Append to article
     article.appendChild(titleBox);
+    article.appendChild(information);
+    article.appendChild(description);
     placesTag.appendChild(article);
   });
 
@@ -123,8 +127,8 @@ function setPlaces(places) {
   //   </div>
   //   <div class="user">
   //           <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
-  //         </div>
-  //         <div class="description">
+  //   </div>
+  //    <div class="description">
   //     {{ place.description | safe }}
-  //         </div>
+  //    </div>
   // </article>

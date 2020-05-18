@@ -1,4 +1,4 @@
-![airbnb_clone](assests/airbnb_clone.png)
+![airbnb_clone](assets/airbnb_clone.png)
 #
 # AirBnB Clone  
 ### The Console + RESTful API + Front End Web Dynamic

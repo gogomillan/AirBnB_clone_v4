@@ -167,4 +167,4 @@ Gonzalo Gomez Millan - [Github](https://github.com/gogomillan) / [Twitter](https
 Juan Marcos Cabezas - [Github](https://github.com/juanmarcoscabezas) / [Twitter](https://twitter.com/juanmarcab)
 
 ## License
-Public Domain. No copy write protection. 
+GLP-3.0 [License File](LICENSE)

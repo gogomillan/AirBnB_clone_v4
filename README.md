@@ -21,6 +21,7 @@ JavaScript for dynamics.
 ## Table of Content
 * [Stack](#stack)
 * [Context](#context)
+* [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
 * [File Descriptions](#file-descriptions)
@@ -63,7 +64,7 @@ You can deploy the software in a:
 - Virtual machine  
   You can create a virtual machine as an option. This solution is testes on:
   - Virtual Box (version 6.0.10)
-  - Vagrant 2.2.5
+  - Vagrant 2.2.5  
 Whether physical or virtual machine you should have the software and versions
 above listed.
 

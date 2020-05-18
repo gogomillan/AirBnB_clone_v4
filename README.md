@@ -1,4 +1,5 @@
-# AirBnB Clone  
+#
+AirBnB Clone  
 ## The Console + RESTful API + Front End 
 The console is the first segment of the AirBnB project at Holberton School that
 will collectively cover fundamental concepts of higher level programming. The

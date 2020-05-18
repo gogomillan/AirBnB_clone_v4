@@ -17,15 +17,15 @@ $(document).ready(function () {
     const id = input.dataset.id;
     const name = input.dataset.name;
 
-    if($(this).is(':checked')) {
+    if ($(this).is(':checked')) {
       amnt[id] = name;
     } else {
       delete amnt[id];
     }
-    let text = Object.values(amnt).toString().slice(0,28);
+    let text = Object.values(amnt).toString().slice(0, 28);
     text += text.length >= 28 ? '...' : '';
     if (text === '') {
-      text = '&nbsp;'
+      text = '&nbsp;';
     }
     $('#amnts_cheked').html(text);
   });

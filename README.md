@@ -49,7 +49,7 @@ software and packages:
 - linux, ubuntu (version 14.04 LTS)
 - mysql  Ver 14.14 Distrib 5.7.8-rc, for Linux (x86_64)
 - python (version 3.4.3)
-- pip 1.5.4 from /usr/lib/python3/dist-packages (python 3.4)
+- pip 1.5.4 from /usr/lib/python3/dist-packages (python 3.4)  
   Packages for python:
   - flasgger (0.9.4)
   - Flask (1.1.2)

@@ -25,6 +25,7 @@ $(document).ready(function () {
   });
 
   checkStatus();
+  placesSearch();
 });
 
 function checkStatus () {
@@ -41,6 +42,18 @@ function checkStatus () {
       } else {
         $('#api_status').addClass('available');
       }
+    }
+  });
+}
+
+function placesSearch() {
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost:5001/api/v1/places_search/',
+    data: {},
+    dataType: 'text',
+    success: function (data) {
+      console.log(data);
     }
   });
 }

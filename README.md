@@ -1,11 +1,6 @@
----
-title: "This is a title"
-date: 25 May 2015
----
-
 #
 # AirBnB Clone  
-## The Console + RESTful API + Front End 
+## The Console + RESTful API + Front End Web Dynamic
 The console is the first segment of the AirBnB project at Holberton School that
 will collectively cover fundamental concepts of higher level programming. The
 goal of AirBnB project is to eventually deploy our server a simple copy of the

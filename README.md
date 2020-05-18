@@ -45,8 +45,8 @@ This project is interpreted/tested on:
 
 ## Requirements
 #### Back-end
-In order to install and run the software it is necessary to have installed next
-software and packages:
+To install and run the software it is necessary to have the next software and
+packages installed:
 - linux, ubuntu (version 14.04 LTS)
 - mysql  Ver 14.14 Distrib 5.7.8-rc, for Linux (x86_64)
 - python (version 3.4.3)
@@ -57,12 +57,13 @@ software and packages:
   - Jinja2 (2.11.2)
   - Flask-Cors (3.0.8)
   - SQLAlchemy (1.2.5)
-You can deploy the software in a:
-- Physical machine  
-  The operating system should be the Ubuntu 14.04 LTS and has the software stack
-  above.
-- Virtual machine  
-  You can create a virtual machine as an option. This solution is testes on:
+You can deploy the software in either:
+- A physical machine  
+  The operating system should be the Ubuntu 14.04 LTS with the software stack
+  above installed.
+- Or a virtual machine  
+  You can create a virtual machine as an option. This solution has been tested
+  on:
   - Virtual Box (version 6.0.10)
   - Vagrant 2.2.5  
 

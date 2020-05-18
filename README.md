@@ -77,10 +77,19 @@ To interpret the software you need a browser. This should be Chrome (version 57.
 or compatible.
 
 ## Installation
+First at all, the software:
 * Clone this repository: `git clone "https://github.com/gogomillan/AirBnB_clone_v4.git"`
 * Access AirBnb directory: `cd AirBnB_clone_v4`
 
 Now you can see the files and directories of the project!!
+
+Second, the data:
+* Acces the assets directory: `cd assets`
+* Copy the json file: `cp file.json ..`
+* Restore data into mysql: `cat 100-dump.sql | mysql -uroot -p`
+* Return to home: `cd ..`
+
+Now you have data to work!!
 
 ## Usage
 **For the console**

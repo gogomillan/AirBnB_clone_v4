@@ -56,6 +56,20 @@ software and packages:
   - Jinja2 (2.11.2)
   - Flask-Cors (3.0.8)
   - SQLAlchemy (1.2.5)
+You can deploy the software in a:
+- Physical machine  
+  The operating system should be the Ubuntu 14.04 LTS and has the software stack
+  above.
+- Virtual machine  
+  You can create a virtual machine as an option. This solution is testes on:
+  - Virtual Box (version 6.0.10)
+  - Vagrant 2.2.5
+Whether physical or virtual machine you should have the software and versions
+above listed.
+
+#### Front-end
+To interpret the software you need a browser. This should be Chrome (version 57.0)
+or compatible.
 
 ## Installation
 * Clone this repository: `git clone "https://github.com/gogomillan/AirBnB_clone_v4.git"`

@@ -1,3 +1,8 @@
+Heading 1
+=
+Heading 2
+-
+
 #
 # AirBnB Clone  
 ## The Console + RESTful API + Front End Web Dynamic
@@ -43,19 +48,19 @@ This project is interpreted/tested on:
 ![Conext_AirBnb_FullStack](assets/hbnb_step5.png)
 
 ## Installation
-* Clone this repository: `git clone "https://github.com/gogomillan/AirBnB_clone_v3.git"`
-* Access AirBnb directory: `cd AirBnB_clone_v3`
+* Clone this repository: `git clone "https://github.com/gogomillan/AirBnB_clone_v4.git"`
+* Access AirBnb directory: `cd AirBnB_clone_v4`
 
 Now you can see the files and directories of the project!!
 
 ## Usage
 **For the console**
-* Access AirBnb directory: `cd AirBnB_clone_v3`
+* Access AirBnb directory: `cd AirBnB_clone_v4`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
 **For the API (lunching)**
-* Access AirBnb directory: `cd AirBnB_clone_v3`
+* Access AirBnb directory: `cd AirBnB_clone_v4`
 ```bash wrap
 guillaume@ubuntu:~/AirBnB_v3$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_HOST=0.0.0.0 HBNB_API_PORT=5000 python3 -m api.v1.app
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
@@ -63,7 +68,7 @@ guillaume@ubuntu:~/AirBnB_v3$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_p
 ```
 
 **For the API (verify)**
-* Access AirBnb directory: `cd AirBnB_clone_v3`
+* Access AirBnb directory: `cd AirBnB_clone_v4`
 ```bash wrap
 guillaume@ubuntu:~/AirBnB_v3$ curl -X GET http://0.0.0.0:5000/api/v1/status
 {

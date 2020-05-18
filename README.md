@@ -57,6 +57,7 @@ packages installed:
   - Flask (1.1.2)
   - Jinja2 (2.11.2)
   - Flask-Cors (3.0.8)
+  - lxml (3.3.3)
   - SQLAlchemy (1.2.5)
 
 You can deploy the software in either:

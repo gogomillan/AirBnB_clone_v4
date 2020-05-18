@@ -65,6 +65,7 @@ You can deploy the software in a:
   You can create a virtual machine as an option. This solution is testes on:
   - Virtual Box (version 6.0.10)
   - Vagrant 2.2.5  
+
 Whether physical or virtual machine you should have the software and versions
 above listed.
 

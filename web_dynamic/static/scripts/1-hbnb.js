@@ -11,13 +11,18 @@
       checked
  */
 $(document).ready(function () {
+  const amnt = {};
   $('input:checkbox').change(function () {
-    if($(this).is(":checked")) {
-      console.log($(this),'-');
-      console.log('checked');
+    const input = $(this)[0];
+    const id = input.dataset.id;
+    const name = input.dataset.name;
+
+    if($(this).is(':checked')) {
+      amnt[id] = name;
     } else {
-      console.log($(this,'-'));
-      console.log('un-checked');
+      delete amnt[id];
     }
+    console.log(amnt);
+    $('#amnts_cheked').text(Object.values(amnt));
   });
 });

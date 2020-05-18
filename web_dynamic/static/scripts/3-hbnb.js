@@ -64,24 +64,67 @@ function placesSearch() {
 }
 
 function setPlaces(places) {
+  const placesTag = $('.places')[0];
   console.log(places);
+
+  places.forEach(place => {
+    const article = document.createElement('article');
+
+    // Title box
+    const titleBox = document.createElement('div');
+    titleBox.classList.add('title-box');
+    const placeName = document.createElement('h2');
+    placeName.append(place.name);
+    const priceByNight = document.createElement('div');
+    priceByNight.classList.add('price_by_night');
+    priceByNight.append(place.price_by_night);
+
+    // Information
+    const information = document.createElement('div');
+    information.classList.add('information');
+    const maxGuest = document.createElement('div');
+    maxGuest.classList.add('max_guest');
+    maxGuest.append(place.max_guest);
+    const numberRooms = document.createElement('div');
+    numberRooms.classList.add('number_rooms');
+    numberRooms.append(place.number_rooms);
+    const numberBathRooms = document.createElement('div');
+    numberBathRooms.classList.add('number_bathrooms');
+    numberBathRooms.append(place.number_bathrooms);
+
+    
+    // Append to TilteBox
+    titleBox.append(placeName);
+    titleBox.appendChild(priceByNight);
+
+    // Append to information
+    information.appendChild(maxGuest);
+    information.appendChild(numberRooms);
+    information.appendChild(numberBathRooms);
+
+
+
+
+    article.appendChild(titleBox);
+    placesTag.appendChild(article);
+  });
+
 }
 
-
-{/* <article>
-	  <div class="title_box">
-	    <h2>{{ place.name }}</h2>
-	    <div class="price_by_night">${{ place.price_by_night }}</div>
-	  </div>
-	  <div class="information">
-	    <div class="max_guest">{{ place.max_guest }} Guest{% if place.max_guest != 1 %}s{% endif %}</div>
-            <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
-            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
-	  </div>
-	  <div class="user">
-            <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
-          </div>
-          <div class="description">
-	    {{ place.description | safe }}
-          </div>
-	</article> */}
+  // <article>
+  //   <div class="title_box">
+  //     <h2>{{ place.name }}</h2>
+  //     <div class="price_by_night">${{ place.price_by_night }}</div>
+  //   </div>
+  //   <div class="information">
+  //     <div class="max_guest">{{ place.max_guest }} Guest{% if place.max_guest != 1 %}s{% endif %}</div>
+  //     <div class="number_rooms">{{ place.number_rooms }} Bedroom{% if place.number_rooms != 1 %}s{% endif %}</div>
+  //     <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom{% if place.number_bathrooms != 1 %}s{% endif %}</div>
+  //   </div>
+  //   <div class="user">
+  //           <b>Owner:</b> {{ place.user.first_name }} {{ place.user.last_name }}
+  //         </div>
+  //         <div class="description">
+  //     {{ place.description | safe }}
+  //         </div>
+  // </article>

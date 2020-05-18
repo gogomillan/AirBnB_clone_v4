@@ -13,11 +13,11 @@
 $(document).ready(function () {
   $('input:checkbox').change(function () {
     if($(this).is(":checked")) {
-      console.log(this)
-      console.log('checked')
+      console.log($(this),'-');
+      console.log('checked');
     } else {
-      console.log(this)
-      console.log('un-checked')
+      console.log($(this,'-'));
+      console.log('un-checked');
     }
   });
 });

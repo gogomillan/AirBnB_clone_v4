@@ -1,10 +1,8 @@
 ---
 title: "This is a title"
 date: 25 May 2015
-output:
-html_document:
-theme: cerulean
 ---
+
 #
 # AirBnB Clone  
 ## The Console + RESTful API + Front End 

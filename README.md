@@ -57,6 +57,7 @@ packages installed:
   - Jinja2 (2.11.2)
   - Flask-Cors (3.0.8)
   - SQLAlchemy (1.2.5)
+
 You can deploy the software in either:
 - A physical machine  
   The operating system should be the Ubuntu 14.04 LTS with the software stack

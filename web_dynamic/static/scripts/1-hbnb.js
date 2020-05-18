@@ -22,7 +22,11 @@ $(document).ready(function () {
     } else {
       delete amnt[id];
     }
-    console.log(amnt);
-    $('#amnts_cheked').text(Object.values(amnt));
+    let text = Object.values(amnt).toString().slice(0,28);
+    text += text.length >= 28 ? '...' : '';
+    if (text === '') {
+      text = '&nbsp;'
+    }
+    $('#amnts_cheked').html(text);
   });
 });

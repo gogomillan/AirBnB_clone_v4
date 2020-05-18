@@ -42,6 +42,21 @@ This project is interpreted/tested on:
 ## Context
 ![Conext_AirBnb_FullStack](assets/hbnb_step5.png)
 
+## Requirements
+#### Back-end
+In order to install and run the software it is necessary to have installed next
+software and packages:
+- linux, ubuntu (version 14.04 LTS)
+- mysql  Ver 14.14 Distrib 5.7.8-rc, for Linux (x86_64)
+- python (version 3.4.3)
+- pip 1.5.4 from /usr/lib/python3/dist-packages (python 3.4)
+  Packages for python:
+  - flasgger (0.9.4)
+  - Flask (1.1.2)
+  - Jinja2 (2.11.2)
+  - Flask-Cors (3.0.8)
+  - SQLAlchemy (1.2.5)
+
 ## Installation
 * Clone this repository: `git clone "https://github.com/gogomillan/AirBnB_clone_v4.git"`
 * Access AirBnb directory: `cd AirBnB_clone_v4`

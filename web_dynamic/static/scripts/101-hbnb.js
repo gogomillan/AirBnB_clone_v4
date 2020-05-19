@@ -58,7 +58,12 @@ $(document).ready(function () {
   });
 
   $(document).on('click', 'span.review_span',function () {
-    findReviews($(this));
+    if ($(this)[0].innerText === 'Show') {
+      findReviews($(this));
+    } else {
+      removeReviews($(this));
+    }
+    
   });
 
   checkStatus();
@@ -156,9 +161,9 @@ function setPlaces (places) {
     reviewSpan.append('Show');
     reviewSpan.classList.add('review_span');
     reviewSpan.setAttribute('data_id', place.id);
-
     reviewTitle.appendChild(reviewB);
     reviewTitle.appendChild(reviewSpan);
+    const reviewList = document.createElement('ul');
 
     // Append to TilteBox
     titleBox.append(placeName);
@@ -171,6 +176,8 @@ function setPlaces (places) {
 
     // Append to reviews
     reviews.appendChild(reviewTitle);
+    reviews.appendChild(reviewList);
+
 
     // Append to article
     article.appendChild(titleBox);
@@ -195,16 +202,16 @@ function checkChildren (node, state) {
 }
 
 function findReviews (node) {
-
   const id = node[0].attributes[1].nodeValue;
-
   $.ajax({
     url: `http://localhost:5001/api/v1/places/${id}/reviews`,
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
+      node[0].innerText = 'Hide';
       const reviews = node[0].parentElement.parentElement;
-      const revList = document.createElement('ul');
+      const revList = reviews.children[1];
+      revList.innerHTML = '';
       data.forEach(review => {
         const revItem = document.createElement('li');
         const revTitle = document.createElement('h4');
@@ -221,4 +228,8 @@ function findReviews (node) {
       console.log(err);
     }
   });
+}
+
+function removeReviews (node) {
+
 }

@@ -206,11 +206,13 @@ function findReviews (node) {
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
-      console.log(data);
       node[0].innerText = 'Hide';
       const reviews = node[0].parentElement.parentElement;
       const revList = reviews.children[1];
       revList.innerHTML = '';
+      const reviewTotal = node[0].parentElement.children[0];
+      reviewTotal.innerText = '';
+      reviewTotal.innerText = data.length + ' Reviews';
       data.forEach(review => {
         const revItem = document.createElement('li');
         const revTitle = document.createElement('h4');

@@ -6,6 +6,7 @@
  */
 $(document).ready(function () {
   const amnt = {};
+
   $('input:checkbox').change(function () {
     const input = $(this)[0];
     const id = input.dataset.id;
@@ -22,6 +23,10 @@ $(document).ready(function () {
       text = '&nbsp;';
     }
     $('#amnts_cheked').html(text);
+  });
+
+  $('button').click(function () {
+    placesSearch(amnt);
   });
 
   checkStatus();
@@ -46,12 +51,17 @@ function checkStatus () {
   });
 }
 
-function placesSearch() {
-  console.log('Entr2a');
+function placesSearch(amnt = null) {
+  const data = {};
+
+  if (amnt !== null) {
+    data.amenities = Object.keys(amnt);
+  }
+
   $.ajax({
     type: 'POST',
     url: 'http://localhost:5001/api/v1/places_search/',
-    data: '{}',
+    data: JSON.stringify(data),
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
@@ -65,7 +75,7 @@ function placesSearch() {
 
 function setPlaces(places) {
   const placesTag = $('.places')[0];
-  console.log(places);
+  placesTag.innerHTML = '';
 
   places.forEach(place => {
     const article = document.createElement('article');

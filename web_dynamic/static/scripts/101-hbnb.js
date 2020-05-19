@@ -141,6 +141,10 @@ function setPlaces (places) {
     description.classList.add('description');
     description.innerHTML = place.description;
 
+    // Reviews
+    const reviews = document.createElement('div');
+    const rwviewTitle = document.createElement('b');
+
     // Append to TilteBox
     titleBox.append(placeName);
     titleBox.appendChild(priceByNight);

@@ -101,3 +101,7 @@ button:hover {
 .popover ul li input {
     margin-right: 10px;
 }
+
+.popover ul li ul li input {
+    margin-right: 10px;
+}

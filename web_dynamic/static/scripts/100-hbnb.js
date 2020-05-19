@@ -6,7 +6,36 @@
  */
 $(document).ready(function () {
   const amnt = {};
-  $('input:checkbox').change(function () {
+  const states = {};
+  const cities = {};
+
+  $('input:checkbox.state_checkbox').change(function () {
+    const input = $(this)[0];
+    const id = input.dataset.id;
+    const name = input.dataset.name;
+
+    if ($(this).is(':checked')) {
+      states[id] = name;
+      checkChildren($(this), true);
+    } else {
+      delete states[id];
+      checkChildren($(this), false);
+    }
+  });
+
+  $('input:checkbox.city_checkbox').change(function () {
+    const input = $(this)[0];
+    const id = input.dataset.id;
+    const name = input.dataset.name;
+
+    if ($(this).is(':checked')) {
+      cities[id] = name;
+    } else {
+      delete cities[id];
+    }
+  });
+
+  $('input:checkbox.amenity_checkbox').change(function () {
     const input = $(this)[0];
     const id = input.dataset.id;
     const name = input.dataset.name;
@@ -22,6 +51,10 @@ $(document).ready(function () {
       text = '&nbsp;';
     }
     $('#amnts_cheked').html(text);
+  });
+
+  $('button').click(function () {
+    placesSearch(states, cities, amnt);
   });
 
   checkStatus();
@@ -46,11 +79,23 @@ function checkStatus () {
   });
 }
 
-function placesSearch () {
+function placesSearch (states = null, cities = null, amnt = null) {
+  const data = {};
+
+  if (states !== null) {
+    data.states = Object.keys(states);
+  }
+  if (cities !== null) {
+    data.cities = Object.keys(cities);
+  }
+  if (amnt !== null) {
+    data.amenities = Object.keys(amnt);
+  }
+
   $.ajax({
     type: 'POST',
     url: 'http://localhost:5001/api/v1/places_search/',
-    data: '{}',
+    data: JSON.stringify(data),
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
@@ -64,6 +109,7 @@ function placesSearch () {
 
 function setPlaces (places) {
   const placesTag = $('.places')[0];
+  placesTag.innerHTML = '';
 
   places.forEach(place => {
     const article = document.createElement('article');
@@ -110,4 +156,17 @@ function setPlaces (places) {
     article.appendChild(description);
     placesTag.appendChild(article);
   });
+}
+
+function checkChildren (node, state) {
+  const h2 = node[0].parentElement;
+  const li = h2.parentElement;
+  const ul = li.children[1];
+  const elements = ul.children;
+  console.log(elements);
+
+  for (let i = 0; i < elements.length; i++) {
+    const checkbox = elements[i].children[0];
+    checkbox.checked = state;
+  }
 }

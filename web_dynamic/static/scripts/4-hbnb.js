@@ -51,7 +51,7 @@ function checkStatus () {
   });
 }
 
-function placesSearch(amnt = null) {
+function placesSearch (amnt = null) {
   const data = {};
 
   if (amnt !== null) {
@@ -67,13 +67,13 @@ function placesSearch(amnt = null) {
     success: function (data) {
       setPlaces(data);
     },
-    error: function(err) {
+    error: function (err) {
       console.log(err);
     }
   });
 }
 
-function setPlaces(places) {
+function setPlaces (places) {
   const placesTag = $('.places')[0];
   placesTag.innerHTML = '';
 

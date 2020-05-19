@@ -206,6 +206,7 @@ function findReviews (node) {
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
+      console.log(data);
       node[0].innerText = 'Hide';
       const reviews = node[0].parentElement.parentElement;
       const revList = reviews.children[1];
@@ -229,7 +230,9 @@ function findReviews (node) {
         ${monthNames[d.getMonth()]} 
         ${d.getFullYear()}`;
 
-        revTitle.append(`From ${review.user_id} the ${dat}`);
+        const userName = review.user.first_name + ' ' + review.user.last_name;
+
+        revTitle.append(`From ${userName} the ${dat}`);
         const revDescription = document.createElement('p');
         revDescription.innerHTML = review.text;
         revItem.appendChild(revTitle);

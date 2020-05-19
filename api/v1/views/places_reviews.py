@@ -22,6 +22,9 @@ def get_reviews(place_id):
         abort(404)
 
     reviews = [review.to_dict() for review in place.reviews]
+    for review in reviews:
+        user = storage.get(User, review['user_id'])
+        review['user'] = user.to_dict()
 
     return jsonify(reviews)
 

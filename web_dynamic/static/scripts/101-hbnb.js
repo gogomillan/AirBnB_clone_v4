@@ -191,7 +191,6 @@ function checkChildren (node, state) {
   const li = h2.parentElement;
   const ul = li.children[1];
   const elements = ul.children;
-  console.log(elements);
 
   for (let i = 0; i < elements.length; i++) {
     const checkbox = elements[i].children[0];

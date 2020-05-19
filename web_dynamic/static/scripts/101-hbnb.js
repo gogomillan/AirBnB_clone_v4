@@ -57,6 +57,11 @@ $(document).ready(function () {
     placesSearch(states, cities, amnt);
   });
 
+  $(document).on('click', 'span.review_span',function () {
+    console.log($(this));
+    findReviews($(this)[0].attributes[1].nodeValue);
+  });
+
   checkStatus();
   placesSearch();
 });
@@ -143,7 +148,18 @@ function setPlaces (places) {
 
     // Reviews
     const reviews = document.createElement('div');
-    const rwviewTitle = document.createElement('b');
+    reviews.classList.add('reviews');
+    const reviewTitle = document.createElement('div');
+    reviewTitle.classList.add('review_title');
+    const reviewB = document.createElement('b');
+    reviewB.append('Reviews');
+    const reviewSpan = document.createElement('span');
+    reviewSpan.append('Show');
+    reviewSpan.classList.add('review_span');
+    reviewSpan.setAttribute('data_id', place.id);
+
+    reviewTitle.appendChild(reviewB);
+    reviewTitle.appendChild(reviewSpan);
 
     // Append to TilteBox
     titleBox.append(placeName);
@@ -154,10 +170,14 @@ function setPlaces (places) {
     information.appendChild(numberRooms);
     information.appendChild(numberBathRooms);
 
+    // Append to reviews
+    reviews.appendChild(reviewTitle);
+
     // Append to article
     article.appendChild(titleBox);
     article.appendChild(information);
     article.appendChild(description);
+    article.appendChild(reviews);
     placesTag.appendChild(article);
   });
 }
@@ -173,4 +193,18 @@ function checkChildren (node, state) {
     const checkbox = elements[i].children[0];
     checkbox.checked = state;
   }
+}
+
+function findReviews (id) {
+  $.ajax({
+    url: `http://localhost:5001/api/v1/places/${id}/reviews`,
+    contentType: 'application/json',
+    dataType: 'json',
+    success: function (data) {
+      console.log(data);
+    },
+    error: function (err) {
+      console.log(err);
+    }
+  });
 }

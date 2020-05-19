@@ -99,3 +99,23 @@
 .user {
   margin-bottom: 1.5%;
 }
+
+.reviews {
+    margin-top: 15px;
+}
+
+.review_title {
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-items:  flex-end;
+}
+
+.review_title b{
+  flex: 1;
+}
+
+.review_span {
+    cursor: pointer;
+}

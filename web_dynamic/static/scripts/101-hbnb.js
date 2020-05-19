@@ -58,8 +58,7 @@ $(document).ready(function () {
   });
 
   $(document).on('click', 'span.review_span',function () {
-    console.log($(this));
-    findReviews($(this)[0].attributes[1].nodeValue);
+    findReviews($(this));
   });
 
   checkStatus();
@@ -151,7 +150,7 @@ function setPlaces (places) {
     reviews.classList.add('reviews');
     const reviewTitle = document.createElement('div');
     reviewTitle.classList.add('review_title');
-    const reviewB = document.createElement('b');
+    const reviewB = document.createElement('h3');
     reviewB.append('Reviews');
     const reviewSpan = document.createElement('span');
     reviewSpan.append('Show');
@@ -195,13 +194,32 @@ function checkChildren (node, state) {
   }
 }
 
-function findReviews (id) {
+function findReviews (node) {
+
+  const id = node[0].attributes[1].nodeValue;
+
   $.ajax({
     url: `http://localhost:5001/api/v1/places/${id}/reviews`,
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
+      const reviews = node[0].parentElement.parentElement;
+      const revList = document.createElement('ul');
       console.log(data);
+      data.forEach(review => {
+        const revItem = document.createElement('li');
+
+        const revTitle = document.createElement('h4');
+        revTitle.append(`From ${review.user_id} the ${review.created_at}`);
+  
+        const revDescription = document.createElement('p');
+        revDescription.innerHTML = review.text;
+
+        revItem.appendChild(revTitle);
+        revItem.appendChild(revDescription);
+        revList.appendChild(revItem);
+      });
+      reviews.appendChild(revList);
     },
     error: function (err) {
       console.log(err);

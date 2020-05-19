@@ -112,10 +112,12 @@
     justify-items:  flex-end;
 }
 
-.review_title b{
+.review_title h3{
   flex: 1;
+  margin-bottom: 0;
 }
 
 .review_span {
     cursor: pointer;
+    align-self: center;
 }

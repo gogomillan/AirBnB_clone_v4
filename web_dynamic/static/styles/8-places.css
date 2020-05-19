@@ -104,6 +104,11 @@
     margin-top: 15px;
 }
 
+.reviews ul {
+    list-style: none;
+    padding: 0;
+}
+
 .review_title {
     border-bottom: 1px solid #DDDDDD;
     padding-bottom: 5px;

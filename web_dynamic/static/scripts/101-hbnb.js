@@ -57,13 +57,12 @@ $(document).ready(function () {
     placesSearch(states, cities, amnt);
   });
 
-  $(document).on('click', 'span.review_span',function () {
+  $(document).on('click', 'span.review_span', function () {
     if ($(this)[0].innerText === 'Show') {
       findReviews($(this));
     } else {
       removeReviews($(this));
     }
-    
   });
 
   checkStatus();
@@ -178,7 +177,6 @@ function setPlaces (places) {
     reviews.appendChild(reviewTitle);
     reviews.appendChild(reviewList);
 
-
     // Append to article
     article.appendChild(titleBox);
     article.appendChild(information);
@@ -215,7 +213,23 @@ function findReviews (node) {
       data.forEach(review => {
         const revItem = document.createElement('li');
         const revTitle = document.createElement('h4');
-        revTitle.append(`From ${review.user_id} the ${review.created_at}`);
+        const d = new Date(review.created_at);
+        const monthNames = [
+          'January',
+          'February', 'March', 'April', 'May', 'June', 'July',
+          'August', 'September', 'October', 'November', 'December'
+        ];
+        const dayPos = ['', 'st', 'nd', 'rd'];
+        let day = 'th';
+        if (d.getDate() <= 3) {
+          day = dayPos[d.getDate()];
+        }
+        const dat = `
+        ${d.getDate() + day} 
+        ${monthNames[d.getMonth()]} 
+        ${d.getFullYear()}`;
+
+        revTitle.append(`From ${review.user_id} the ${dat}`);
         const revDescription = document.createElement('p');
         revDescription.innerHTML = review.text;
         revItem.appendChild(revTitle);

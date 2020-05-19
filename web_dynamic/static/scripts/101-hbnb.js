@@ -231,5 +231,8 @@ function findReviews (node) {
 }
 
 function removeReviews (node) {
-
+  node[0].innerText = 'Show';
+  const reviews = node[0].parentElement.parentElement;
+  const revList = reviews.children[1];
+  revList.innerHTML = '';
 }

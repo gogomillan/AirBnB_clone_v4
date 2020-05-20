@@ -4,11 +4,11 @@
     - If in the status is OK, add the class available to the DIV#api_status
     - Otherwise, remove the class available to the DIV#api_status
  */
-$(document).ready(function () {
-  const amnt = {};
-  const states = {};
-  const cities = {};
+const amnt = {};
+const states = {};
+const cities = {};
 
+$(document).ready(function () {
   $('input:checkbox.state_checkbox').change(function () {
     const input = $(this)[0];
     const id = input.dataset.id;
@@ -27,11 +27,15 @@ $(document).ready(function () {
     const input = $(this)[0];
     const id = input.dataset.id;
     const name = input.dataset.name;
+    const state = input.dataset.state;
 
     if ($(this).is(':checked')) {
       cities[id] = name;
     } else {
+      const state_checked = $('*[data-id="' + state + '"]');
       delete cities[id];
+      state_checked[0].checked = false;
+      delete states[state];
     }
   });
 
@@ -163,10 +167,16 @@ function checkChildren (node, state) {
   const li = h2.parentElement;
   const ul = li.children[1];
   const elements = ul.children;
-  console.log(elements);
 
   for (let i = 0; i < elements.length; i++) {
     const checkbox = elements[i].children[0];
+    const id = checkbox.dataset.id;
+    const name = checkbox.dataset.name;
     checkbox.checked = state;
+    if (state) {
+      cities[id] = name;
+    } else {
+      delete cities[id];
+    }
   }
 }

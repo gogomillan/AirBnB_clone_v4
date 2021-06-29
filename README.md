@@ -8,7 +8,10 @@ Flask RESTful API with a dynamic HTML5/CSS3/jQuery front-end.
 
 ![OS Linux](https://img.shields.io/badge/OS-Linux-blue.svg)
 ![distro Ubuntu](https://img.shields.io/badge/distro-Ubuntu-orange.svg)
-![tecnology C](https://img.shields.io/badge/technology-Python-green.svg)
+![tecnology Python](https://img.shields.io/badge/technology-Python-yellow.svg)
+![tecnology HTML](https://img.shields.io/badge/technology-HTML-orange.svg)
+![tecnology CSS](https://img.shields.io/badge/technology-CSS-blue.svg)
+![tecnology jQuery](https://img.shields.io/badge/technology-jQuery-green.svg)
 
 The console is the first segment of the AirBnB project at Holberton School that
 will collectively cover fundamental concepts of higher level programming. The

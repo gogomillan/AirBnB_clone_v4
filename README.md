@@ -2,6 +2,14 @@
 #
 # AirBnB Clone  
 ### The Console + RESTful API + Front End Web Dynamic
+An Airbnb clone is a complete full-stack web application with an administration
+console and DevOps utilities, developed on Linux, Python, MySQL database, and
+Flask RESTful API with a dynamic HTML5/CSS3/jQuery front-end.
+
+![OS Linux](https://img.shields.io/badge/OS-Linux-blue.svg)
+![distro Ubuntu](https://img.shields.io/badge/distro-Ubuntu-orange.svg)
+![tecnology C](https://img.shields.io/badge/technology-Python-green.svg)
+
 The console is the first segment of the AirBnB project at Holberton School that
 will collectively cover fundamental concepts of higher level programming. The
 goal of AirBnB project is to eventually deploy our server a simple copy of the
